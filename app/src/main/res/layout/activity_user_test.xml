@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="userViewModel"
+            type= "com.pjh.mvvm.viewmodel.UserViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UserTestActivity">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="유저 이름 수정!"
+            android:onClick="@{()->userViewModel.modifyUserName(edittextName.getText().toString())}"
+            android:id="@+id/button_modify_user_name"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="유저 폰번호 수정!"
+            android:id="@+id/button_modify_user_phone_number"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:onClick="@{()->userViewModel.modifyUserPhoneNumber(edittextPhoneNumber.getText().toString())}"
+
+            />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:hint="이름을 입력해주세요!!"
+            android:id="@+id/edittext_name"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:hint="폰넘버를 입력해주세요!"
+            android:id="@+id/edittext_phone_number"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="@{userViewModel.userName}"
+            android:id="@+id/textview_user_name"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/textview_user_phone_number"
+            android:textColor="@color/black"
+            android:text="@{userViewModel.userPhoneNumber}"
+            app:layout_constraintTop_toBottomOf="@id/textview_user_name"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
