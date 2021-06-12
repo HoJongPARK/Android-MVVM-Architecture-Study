@@ -59,7 +59,7 @@
             android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:text="@{userViewModel.userName}"
+            android:text="@{userViewModel.userMutableLiveData.mUserName}"
             android:id="@+id/textview_user_name"
             />
 
@@ -69,7 +69,7 @@
             app:layout_constraintRight_toRightOf="parent"
             android:id="@+id/textview_user_phone_number"
             android:textColor="@color/black"
-            android:text="@{userViewModel.userPhoneNumber}"
+            android:text="@{userViewModel.userMutableLiveData.mPhoneNumber}"
             app:layout_constraintTop_toBottomOf="@id/textview_user_name"
             />
 

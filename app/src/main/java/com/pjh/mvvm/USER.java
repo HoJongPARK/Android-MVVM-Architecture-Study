@@ -9,9 +9,9 @@ import lombok.NonNull;
 @Getter
 public class USER {
 
-    @NonNull String mUserName;
-    int mUserAge;
-    @NonNull String mPhoneNumber;
+    public @NonNull String mUserName;
+    public int mUserAge;
+    public @NonNull String mPhoneNumber;
 
 
 }
